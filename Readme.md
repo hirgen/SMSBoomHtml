@@ -1,4 +1,4 @@
-<html lang="zh-CN">
+<html lang="zh-CN" translate="no">
 <h1>欢迎～这是短信轰炸机网页版～</h1>
 （仅供学习，请勿滥用）<br>
 emmm，改版了，一些功能暂时移除，后期添加..<br>
